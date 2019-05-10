@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Quote Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center", style='background-image: url(http://vignette3.wikia.nocookie.net/gameofthrones/images/4/46/TSITD_The_Wall.png/revision/latest?cb=20150325184700); background-size: cover; background-position-y: center'>
+          <h2>Random Quote Generator<i> For Movie Trivia </i></h2>
+        </div>
+        <!-- Loop through the info in the links list and 
+            put href and headline text in the appropriate spots -->
+        {% for link in links.links %}
+        <div class='row text-center'>
+            <div class="col-md">
+                <strong>{{ link.hed }}</strong>
+                <hr>
+            </div>
+        </div>
+        {% endfor %}
+    </div>    
+</body>
+</html>
