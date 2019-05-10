@@ -9,15 +9,19 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="jumbotron text-center", style='background-size: cover; background-position-y: center'>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Quotes</a></p>
-          <h2>Random Quote Generator<i> For Movie Trivia </i></h2>
+        <div class="jumbotron text-center", style='background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: cover; background-position-y: center'>
+        <p><a class="btn btn-primary btn-lg" href="/" role="button">Get New Quotes!</a></p>
+          <h2>Movie Quotes From 
+          </br><i> {{ movies.title }} </i></h2>
         </div>
-
         <div class='row text-center'>
             <div class="col-md">
-                <strong>{{ link }}</strong>
-                <hr>
+                <a href="{{ movies.url2 }}" target="_blank"><large>Click here if no quotes are displayed</large></a>
+                {% for movies in movies.all_quotes %}
+                <ul>
+                <strong>{{ movies.info }}</strong>
+                </ul>
+                {% endfor %}
             </div>
         </div>
     </div>    

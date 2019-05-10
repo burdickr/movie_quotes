@@ -7,21 +7,13 @@ app = Flask(__name__)
 # Create route
 @app.route('/')
 def home():
-
+    movies = movie_scrape.scrape_quote()
     # Render the info in links to the html file
-    return render_template('index.html', links=links)
+    return render_template('index.html', movies=movies)
 
-# Route that will trigger the scrape function
-@app.route("/scrape")
-def scrape():
-
-    links = movie_scrape.scrape_quote()
-
-   # Redirect back to home page
-    return { links
-    redirect("/")
-    }
-
+#local testing
+#if __name__ == "__main__":
+  # app.run(debug=True)
 # Define port
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
