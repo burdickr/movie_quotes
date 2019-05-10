@@ -9,19 +9,19 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="jumbotron text-center", style='background-image: url(http://vignette3.wikia.nocookie.net/gameofthrones/images/4/46/TSITD_The_Wall.png/revision/latest?cb=20150325184700); background-size: cover; background-position-y: center'>
+        <div class="jumbotron text-center", style='background-size: cover; background-position-y: center'>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Quotes</a></p>
           <h2>Random Quote Generator<i> For Movie Trivia </i></h2>
         </div>
-        <!-- Loop through the info in the links list and 
-            put href and headline text in the appropriate spots -->
-        {% for link in links.links %}
+
         <div class='row text-center'>
             <div class="col-md">
-                <strong>{{ link.hed }}</strong>
+                <strong>{{ link }}</strong>
                 <hr>
             </div>
         </div>
-        {% endfor %}
     </div>    
 </body>
 </html>
+<div class="container">
+

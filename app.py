@@ -7,11 +7,20 @@ app = Flask(__name__)
 # Create route
 @app.route('/')
 def home():
-    # The hed_scrape module and scrape_heds() function scrapes the hrefs and the headline text
-    links = movie_scrape.scrape_quote()
 
     # Render the info in links to the html file
     return render_template('index.html', links=links)
+
+# Route that will trigger the scrape function
+@app.route("/scrape")
+def scrape():
+
+    links = movie_scrape.scrape_quote()
+
+   # Redirect back to home page
+    return { links
+    redirect("/")
+    }
 
 # Define port
 if __name__ == '__main__':
