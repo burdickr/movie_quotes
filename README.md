@@ -1,8 +1,10 @@
-# Random Movie Quote Generator App
+# Movie Quote Generator App
 
 [Check out the movie quote generator running here!](https://ryan-movie-quotes.herokuapp.com/)
 
 * This app will take a randomized movie title from a csv file and scrape rotten tomatoes for quotes from the movie.
+
+* You can also type in a movie title to search for specified quotes. 
 
 * The app was created as a quick way to generate random quotes for trivia. On my team at work we use this app to send each other a random movie quote in the morning and then it's a mini competition to see who can guess correctly first. 
 
