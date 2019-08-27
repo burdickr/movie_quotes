@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Quote Generator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="styleshee" href=
+    <link rel="styleshee" href=</head> <script src="../static/app.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
-        <div class="jumbotron text-center", style='background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: cover; background-position-y: center'>
-        <p><a class="btn btn-primary btn-lg" href="/" role="button">Get New Quotes!</a></p>
-          <h2>Movie Quotes From 
-          </br><i> {{ movies.title }} </i></h2>
+        <div class="jumbotron text-center" ,
+            style='background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: cover; background-position-y: center'>
+            <h1>Ryan's Movie Quote Application!</h1>
+            <h3 style=color:rgb(0,0,0)> Use the option on the left for random quotes or search for quotes with a
+                specific title on the right.
+            </h3>
+            <h3>Check out the code <a href="https://github.com/burdickr/movie_quotes" target="_blank">here!</a></h3>
         </div>
+
         <div class='row text-center'>
-            <div class="col-md">
-                <a href="{{ movies.url2 }}" target="_blank"><large>Click here if no quotes are displayed</large></a>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">
+
+                <h3>Click the button for random quotes!</h3>
+                <br>
+                <a class="btn btn-primary" href="/" role="button">Random Quotes!</a>
+
+
+            </div>
+
+            <div class="col-lg-3">
+                <form method="POST" action="/title">
+                    <br>
+                    <div class="form-group" align="center">
+                        <input name="movieSearch" class="form-control" id="selectedTitle" style=width:100%
+                            placeholder="Enter the title of a movie to search for specific quotes"><br>
+
+                        <button type="submit" value="Send" class="btn btn-primary">Search Quotes!</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+        <div class='row text-center' style=padding-top:2%>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <a href="{{ movies.url2 }}" target="_blank">
+                    <large>Click here if no quotes are displayed</large>
+                </a><br>
+                <h2>Movie Quotes From
+                    </br><i> {{ movies.title }} </i></h2><br>
                 {% for movies in movies.all_quotes %}
-                <ul>
-                <strong>{{ movies.info }}</strong>
-                </ul>
+                <p>
+                    <strong>{{ movies.info }}</strong>
+                </p>
                 {% endfor %}
             </div>
+            <div class="col-lg-3"></div>
         </div>
-    </div>    
+    </div>
 </body>
-</html>
-<div class="container">
 
+</html>
